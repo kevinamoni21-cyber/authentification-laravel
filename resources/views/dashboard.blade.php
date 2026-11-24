@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Mon tableau de bord</title>
-</head>
-<body>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+    </x-slot>
 
-    <h1>Bienvenue dans votre espace personnel !</h1>
-
-    <p>Vous êtes connecté à votre compte.</p>
-
-    <a href="{{ route('profile') }}">Voir mon profil</a>
-    
-    <form action="{{ route('logout') }}" method="POST">
-    @csrf
-
-    <button type="submit">Se déconnecter</button>
-</form>
-</body>
-</html>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    {{ __("You're logged in!") }}
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
